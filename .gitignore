@@ -51,3 +51,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+rag_ai/venv/
+.ipynb_checkpoints/
