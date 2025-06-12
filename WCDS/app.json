@@ -1,0 +1,50 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/share/share",
+    "pages/share/edit",
+    "pages/itinerary/itinerary",
+    "pages/comunity/comunity",
+    "pages/comunity/detail",
+    "pages/destination/detail",
+    "pages/query/query",
+    "pages/chatBot/chatBot",
+    "pages/weather/weather",
+    "pages/articles/articles"
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/chatBot/chatBot",
+        "text": "AI助手"
+      },
+      {
+        "pagePath": "pages/itinerary/itinerary",
+        "text": "行程规划"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气交通"
+      },
+      {
+        "pagePath": "pages/comunity/comunity",
+        "text": "交流社区"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "旅游助手",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

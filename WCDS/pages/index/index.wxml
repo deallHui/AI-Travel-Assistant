@@ -1,0 +1,56 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input type="text" placeholder="搜索目的地" bindinput="onSearchInput"/>
+  </view>
+
+  <!-- 筛选条件 -->
+  <view class="filter-section">
+    <view class="filter-item" bindtap="showBudgetFilter">
+      <text>预算{{filters.budget ? '：' + (filters.budget === 'economic' ? '经济型' : filters.budget === 'comfort' ? '舒适型' : '豪华型') : ''}}</text>
+      <text class="arrow">▼</text>
+    </view>
+    <view class="filter-item" bindtap="showTimeFilter">
+      <text>时间{{filters.time ? '：' + (filters.time === '1-3' ? '1-3天' : filters.time === '4-7' ? '4-7天' : '7天以上') : ''}}</text>
+      <text class="arrow">▼</text>
+    </view>
+    <view class="filter-item" bindtap="showPreferenceFilter">
+      <text>偏好{{filters.preference ? '：' + (filters.preference === 'nature' ? '自然风光' : filters.preference === 'culture' ? '人文历史' : filters.preference === 'food' ? '美食购物' : '休闲度假') : ''}}</text>
+      <text class="arrow">▼</text>
+    </view>
+  </view>
+
+  <!-- 推荐目的地列表 -->
+  <view class="destination-list">
+    <!-- 调试信息 -->
+    <view wx:if="{{destinations.length === 0}}" style="text-align: center; padding: 40rpx; color: #999;">
+      <text>暂无目的地数据</text>
+      <text style="display: block; margin-top: 10rpx; font-size: 24rpx;">请检查数据库是否正确导入</text>
+    </view>
+
+    <!-- 目的地卡片 -->
+    <view class="destination-card" wx:for="{{destinations}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+      <image src="{{item.imageUrl}}" mode="aspectFill" style="width: 100%; height: 200rpx; border-radius: 8rpx;"/>
+      <view class="destination-info">
+        <text class="name">{{item.name}}</text>
+        <text class="description">{{item.description}}</text>
+        <view class="tags">
+          <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- AI助手快速入口 -->
+  <view class="ai-assistant-entry">
+    <view class="ai-card" bindtap="goToAIAssistant">
+      <view class="ai-icon">🤖</view>
+      <view class="ai-content">
+        <text class="ai-title">AI智能助手</text>
+        <text class="ai-desc">专业旅游问答，为您规划完美行程</text>
+      </view>
+      <view class="ai-arrow">→</view>
+    </view>
+  </view>
+
+</view>

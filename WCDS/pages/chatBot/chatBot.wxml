@@ -1,0 +1,107 @@
+<!--pages/chatBot/chatBot.wxml-->
+<view class="chat-container">
+  <!-- 顶部状态栏 -->
+  <view class="status-bar">
+    <view class="status-indicator {{systemStatus.connected ? 'connected' : 'disconnected'}}">
+      <text class="status-dot"></text>
+      <text class="status-text">{{systemStatus.connected ? 'AI助手在线' : 'AI助手离线'}}</text>
+    </view>
+    <view class="clear-btn" bindtap="clearChat">
+      <text class="iconfont icon-delete"></text>
+    </view>
+  </view>
+
+  <!-- 聊天消息区域 -->
+  <scroll-view
+    class="chat-messages"
+    scroll-y="{{true}}"
+    scroll-top="{{scrollTop}}"
+    scroll-with-animation="{{true}}">
+
+    <view class="message-list">
+      <view
+        wx:for="{{messages}}"
+        wx:key="id"
+        class="message-item {{item.type}}-message {{item.isError ? 'error-message' : ''}}">
+
+        <!-- 机器人消息 -->
+        <view wx:if="{{item.type === 'bot'}}" class="bot-message-container">
+          <view class="avatar bot-avatar">🤖</view>
+          <view class="message-content">
+            <view class="message-text">{{item.content}}</view>
+
+            <!-- 消息来源信息 -->
+            <view wx:if="{{item.sources && item.sources.length > 0}}" class="message-sources">
+              <text class="sources-label">信息来源：</text>
+              <text wx:for="{{item.sources}}" wx:for-item="source" wx:key="*this" class="source-tag">{{source}}</text>
+            </view>
+
+            <!-- 置信度和增强标识 -->
+            <view wx:if="{{item.confidence || item.enhanced_with_ai}}" class="message-meta">
+              <text wx:if="{{item.confidence}}" class="confidence">置信度: {{item.confidencePercent}}%</text>
+              <text wx:if="{{item.enhanced_with_ai}}" class="ai-enhanced">🔍 AI增强</text>
+            </view>
+
+            <view class="message-time">{{item.timestamp}}</view>
+          </view>
+        </view>
+
+        <!-- 用户消息 -->
+        <view wx:if="{{item.type === 'user'}}" class="user-message-container">
+          <view class="message-content">
+            <view class="message-text">{{item.content}}</view>
+            <view class="message-time">{{item.timestamp}}</view>
+          </view>
+          <view class="avatar user-avatar">👤</view>
+        </view>
+      </view>
+
+      <!-- 加载指示器 -->
+      <view wx:if="{{isLoading}}" class="loading-indicator">
+        <view class="bot-message-container">
+          <view class="avatar bot-avatar">🤖</view>
+          <view class="message-content">
+            <view class="typing-indicator">
+              <text class="typing-dot"></text>
+              <text class="typing-dot"></text>
+              <text class="typing-dot"></text>
+            </view>
+            <view class="message-text loading-text">正在思考中...</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <view class="input-container">
+      <input
+        class="message-input"
+        type="text"
+        placeholder="请输入您的旅游问题..."
+        value="{{inputText}}"
+        bindinput="onInputChange"
+        confirm-type="send"
+        bindconfirm="sendMessage"
+        disabled="{{isLoading}}" />
+
+      <button
+        class="send-btn {{inputText.length > 0 && !isLoading ? 'active' : ''}}"
+        bindtap="sendMessage"
+        disabled="{{isLoading || inputText.length === 0}}">
+        发送
+      </button>
+    </view>
+
+    <!-- 快捷问题 -->
+    <view class="quick-questions" wx:if="{{messages.length <= 1}}">
+      <text class="quick-label">💡 试试这些问题：</text>
+      <view class="quick-buttons">
+        <button class="quick-btn" bindtap="sendQuickMessage" data-text="推荐一些北京的必去景点">北京景点推荐</button>
+        <button class="quick-btn" bindtap="sendQuickMessage" data-text="三亚有什么好吃的美食">三亚美食攻略</button>
+        <button class="quick-btn" bindtap="sendQuickMessage" data-text="上海到杭州怎么去最方便">交通路线查询</button>
+      </view>
+    </view>
+  </view>
+</view>

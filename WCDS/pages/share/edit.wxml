@@ -1,0 +1,5 @@
+<view class="container">
+  <input class="title-input" placeholder="请输入攻略标题" bindinput="onTitleInput"/>
+  <textarea class="content-input" placeholder="请输入详细内容" bindinput="onContentInput"/>
+  <button type="primary" bindtap="onSubmit">发布攻略</button>
+</view> 

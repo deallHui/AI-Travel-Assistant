@@ -1,0 +1,134 @@
+[
+  {
+    "_id": "dest001",
+    "id": "dest001",
+    "name": "北京",
+    "description": "中国的首都，拥有丰富的历史文化和现代都市风貌",
+    "imageUrl": "https://example.com/images/beijing.jpg",
+    "tags": ["历史文化", "古建筑", "美食", "购物"],
+    "budget": "comfort",
+    "recommendedTime": "4-7",
+    "preferences": "culture",
+    "attractions": [
+      {"name": "故宫", "description": "明清两代的皇家宫殿"},
+      {"name": "天安门广场", "description": "世界最大的城市广场"},
+      {"name": "长城", "description": "世界文化遗产，中国古代军事防御工程"}
+    ],
+    "weather": {
+      "summary": "晴朗，适宜出行"
+    },
+    "traffic": {
+      "summary": "交通便利，地铁发达"
+    }
+  },
+  {
+    "_id": "dest002", 
+    "id": "dest002",
+    "name": "上海",
+    "description": "国际化大都市，东方明珠塔闪耀黄浦江畔",
+    "imageUrl": "https://example.com/images/shanghai.jpg",
+    "tags": ["现代都市", "购物", "美食", "夜景"],
+    "budget": "luxury",
+    "recommendedTime": "4-7",
+    "preferences": "food",
+    "attractions": [
+      {"name": "外滩", "description": "上海的标志性景观带"},
+      {"name": "东方明珠塔", "description": "上海的地标建筑"},
+      {"name": "南京路步行街", "description": "中华商业第一街"}
+    ],
+    "weather": {
+      "summary": "多云，温度适宜"
+    },
+    "traffic": {
+      "summary": "地铁网络发达，出行便利"
+    }
+  },
+  {
+    "_id": "dest003",
+    "id": "dest003", 
+    "name": "杭州",
+    "description": "人间天堂，西湖美景如诗如画",
+    "imageUrl": "https://example.com/images/hangzhou.jpg",
+    "tags": ["自然风光", "湖泊", "古典园林", "茶文化"],
+    "budget": "comfort",
+    "recommendedTime": "1-3",
+    "preferences": "nature",
+    "attractions": [
+      {"name": "西湖", "description": "世界文化遗产，中国最著名的湖泊"},
+      {"name": "灵隐寺", "description": "江南著名古刹"},
+      {"name": "雷峰塔", "description": "西湖十景之一"}
+    ],
+    "weather": {
+      "summary": "春暖花开，最佳旅游季节"
+    },
+    "traffic": {
+      "summary": "高铁直达，市内交通便利"
+    }
+  },
+  {
+    "_id": "dest004",
+    "id": "dest004",
+    "name": "成都",
+    "description": "天府之国，熊猫故乡，美食天堂",
+    "imageUrl": "https://example.com/images/chengdu.jpg", 
+    "tags": ["美食", "熊猫", "休闲", "文化"],
+    "budget": "economic",
+    "recommendedTime": "4-7",
+    "preferences": "food",
+    "attractions": [
+      {"name": "大熊猫繁育研究基地", "description": "世界著名的大熊猫保护研究中心"},
+      {"name": "宽窄巷子", "description": "成都历史文化街区"},
+      {"name": "锦里古街", "description": "西蜀历史上最古老的街道之一"}
+    ],
+    "weather": {
+      "summary": "气候宜人，四季如春"
+    },
+    "traffic": {
+      "summary": "航空枢纽，地铁便利"
+    }
+  },
+  {
+    "_id": "dest005",
+    "id": "dest005",
+    "name": "三亚",
+    "description": "热带海滨城市，椰风海韵，度假胜地",
+    "imageUrl": "https://example.com/images/sanya.jpg",
+    "tags": ["海滨", "度假", "热带", "潜水"],
+    "budget": "luxury", 
+    "recommendedTime": "4-7",
+    "preferences": "leisure",
+    "attractions": [
+      {"name": "亚龙湾", "description": "天下第一湾，热带海滨风光"},
+      {"name": "天涯海角", "description": "海南著名景点"},
+      {"name": "南山文化旅游区", "description": "佛教文化主题景区"}
+    ],
+    "weather": {
+      "summary": "阳光明媚，海风习习"
+    },
+    "traffic": {
+      "summary": "机场便利，度假村接送服务"
+    }
+  },
+  {
+    "_id": "dest006",
+    "id": "dest006",
+    "name": "西安",
+    "description": "十三朝古都，丝绸之路起点，历史文化名城",
+    "imageUrl": "https://example.com/images/xian.jpg",
+    "tags": ["历史", "古迹", "文化", "美食"],
+    "budget": "economic",
+    "recommendedTime": "1-3", 
+    "preferences": "culture",
+    "attractions": [
+      {"name": "兵马俑", "description": "世界第八大奇迹"},
+      {"name": "大雁塔", "description": "唐代佛教建筑艺术杰作"},
+      {"name": "古城墙", "description": "中国现存最完整的古代城垣建筑"}
+    ],
+    "weather": {
+      "summary": "秋高气爽，适宜游览"
+    },
+    "traffic": {
+      "summary": "高铁枢纽，地铁覆盖主要景点"
+    }
+  }
+]

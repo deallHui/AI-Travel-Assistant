@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="topic">
+    热门景区推荐
+  </view>
+  <!-- 轮播图 -->
+  <swiper class="swiper" autoplay="true" interval="6000" circular="true" indicator-dots="true" indicator-color="yellow" indicator-active-color="red">
+    <swiper-item>
+      <image src="/images/sanya.jpg" class="swiper-image" bindtap="goToDetail"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/shanghai.jpg" class="swiper-image" bindtap="goToDetail"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/guangzhou.jpg" class="swiper-image" bindtap="goToDetail"></image>
+    </swiper-item>
+  </swiper>
+  <view class="tip-text">
+    点击图片查看景区详情
+  </view>
+  <!-- AI助手唤醒区域 -->
+  <view class="ai-helper" style="margin-top:40rpx; display:flex; flex-direction:column; align-items:center;">
+    <image src="/images/lingbao.gif" class="ai-gif" bind:tap="goToChat"></image>
+    <text class="ai-tip" bind:tap="goToChat">点击唤醒AI助手</text>
+  </view>
+  <button type="primary" bindtap="goToSearch">去搜索页面</button>
+</view>

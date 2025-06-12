@@ -1,0 +1,46 @@
+from langchain_chroma import Chroma
+from langchain_community.document_loaders import TextLoader
+from langchain_ollama import OllamaEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+# 加载旅游攻略文档
+loader = TextLoader("./travel_guides_database.txt", encoding="utf-8")
+documents = loader.load()
+
+# 针对旅游攻略优化的分块参数
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=800,      # 增加到800字符，保证攻略信息完整性
+    chunk_overlap=100,   # 增加重叠，确保相关信息不被分割
+    separators=[         # 优化分割符，按旅游攻略结构分割
+        "\n## ",         # 按大标题分割
+        "\n### ",        # 按小标题分割
+        "\n**",          # 按粗体标题分割
+        "\n- ",          # 按列表项分割
+        "\n",            # 按段落分割
+        "。",            # 按句号分割
+        "，",            # 按逗号分割
+        " ",             # 按空格分割
+        ""               # 字符级分割
+    ]
+)
+
+split_documents = text_splitter.split_documents(documents)
+print(f"文档被分割为 {len(split_documents)} 个块")
+
+# 嵌入模型
+embed_model = OllamaEmbeddings(
+    model="nomic-embed-text:latest",
+)
+
+# 向量数据库配置
+vdb_path = "D:\\AICD\\rag_ai\\vectorstores"
+vectorstore = Chroma(persist_directory=vdb_path, embedding_function=embed_model)
+
+# 批处理写入 - 200个块一批，平衡效率和稳定性
+batch_size = 200
+for i in range(0, len(split_documents), batch_size):
+    batch = split_documents[i:i+batch_size]
+    vectorstore.add_documents(batch)
+    print(f"已处理: {i+len(batch)}/{len(split_documents)} 个文档块")
+
+print("✅ 旅游攻略数据库构建完成！")

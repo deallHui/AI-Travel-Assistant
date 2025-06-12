@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  rag-api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.fast
+    container_name: rag-travel-api-fast
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DEPLOY_ENV=development
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - HOST=0.0.0.0
+      - PORT=8000
+      - VECTORSTORE_PATH=/app/vectorstores
+      - EMBEDDING_MODEL=BAAI/bge-large-zh-v1.5
+      - EMBEDDING_PROVIDER=siliconflow
+      - SILICONFLOW_API_KEY=sk-igezazwljqsonvzxkigursxubkkybqfcscytmjubahxrvkhq
+    volumes:
+      # 挂载向量数据库（持久化）
+      - ../vectorstores:/app/vectorstores:ro
+      # 挂载日志目录
+      - ./logs:/app/logs
+      # 挂载配置文件（可选）
+      - ../deploy_config.py:/app/deploy_config.py:ro
+    networks:
+      - rag-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  rag-network:
+    driver: bridge

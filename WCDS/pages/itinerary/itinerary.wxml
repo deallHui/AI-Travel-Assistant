@@ -1,0 +1,30 @@
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="form-item">
+      <text>出发地</text>
+      <input name="from" placeholder="请输入出发地" />
+    </view>
+    <view class="form-item">
+      <text>目的地</text>
+      <input name="to" placeholder="请输入目的地" />
+    </view>
+    <view class="form-item">
+      <text>出发日期</text>
+      <input name="startDate" type="date" />
+    </view>
+    <view class="form-item">
+      <text>返回日期</text>
+      <input name="endDate" type="date" />
+    </view>
+    <button formType="submit" type="primary">生成行程</button>
+  </form>
+
+  <view class="itinerary-list">
+    <view wx:for="{{itineraries}}" wx:key="_id" class="itinerary-card">
+      <text>目的地：{{item.destinationId}}</text>
+      <text>出发：{{item.startDate}}</text>
+      <text>返回：{{item.endDate}}</text>
+      <button size="mini" bindtap="setReminder" data-id="{{item._id}}">设置提醒</button>
+    </view>
+  </view>
+</view> 

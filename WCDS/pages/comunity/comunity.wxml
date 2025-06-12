@@ -1,0 +1,25 @@
+<!--pages/comunity/comunity.wxml-->
+<view class="container">
+  <view style="display: flex; gap: 10rpx; margin-bottom: 20rpx;">
+    <button type="primary" bindtap="goToAsk">我要提问</button>
+    <button bindtap="testDatabaseWrite" style="background: #ff6b6b; color: white;">测试数据库</button>
+  </view>
+  <view class="qa-list">
+    <view wx:for="{{qaList}}" wx:key="_id" class="qa-item" bindtap="goToDetail" data-id="{{item._id}}">
+      <view class="qa-title">{{item.title}}</view>
+      <view class="qa-content">{{item.content}}</view>
+      <view class="qa-meta">{{item.createTime}}</view>
+      <view class="qa-actions">
+        <button
+          size="mini"
+          catchtap="likePost"
+          data-id="{{item._id}}"
+          data-index="{{index}}"
+          class="like-btn {{item.isLiked ? 'liked' : ''}}"
+        >
+          {{item.isLiked ? '❤️' : '🤍'}} {{item.likesCount || 0}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "city001",
+    "name": "北京",
+    "id": "101010100",
+    "province": "北京市",
+    "country": "中国"
+  },
+  {
+    "_id": "city002", 
+    "name": "上海",
+    "id": "101020100",
+    "province": "上海市",
+    "country": "中国"
+  },
+  {
+    "_id": "city003",
+    "name": "杭州", 
+    "id": "101210101",
+    "province": "浙江省",
+    "country": "中国"
+  },
+  {
+    "_id": "city004",
+    "name": "成都",
+    "id": "101270101", 
+    "province": "四川省",
+    "country": "中国"
+  },
+  {
+    "_id": "city005",
+    "name": "三亚",
+    "id": "101310201",
+    "province": "海南省", 
+    "country": "中国"
+  },
+  {
+    "_id": "city006",
+    "name": "西安",
+    "id": "101110101",
+    "province": "陕西省",
+    "country": "中国"
+  },
+  {
+    "_id": "city007",
+    "name": "广州",
+    "id": "101280101",
+    "province": "广东省",
+    "country": "中国"
+  },
+  {
+    "_id": "city008",
+    "name": "深圳",
+    "id": "101280601", 
+    "province": "广东省",
+    "country": "中国"
+  },
+  {
+    "_id": "city009",
+    "name": "南京",
+    "id": "101190101",
+    "province": "江苏省",
+    "country": "中国"
+  },
+  {
+    "_id": "city010",
+    "name": "武汉",
+    "id": "101200101",
+    "province": "湖北省",
+    "country": "中国"
+  },
+  {
+    "_id": "city011",
+    "name": "重庆",
+    "id": "101040100",
+    "province": "重庆市",
+    "country": "中国"
+  },
+  {
+    "_id": "city012",
+    "name": "天津",
+    "id": "101030100",
+    "province": "天津市", 
+    "country": "中国"
+  },
+  {
+    "_id": "city013",
+    "name": "青岛",
+    "id": "101120201",
+    "province": "山东省",
+    "country": "中国"
+  },
+  {
+    "_id": "city014",
+    "name": "大连",
+    "id": "101070201",
+    "province": "辽宁省",
+    "country": "中国"
+  },
+  {
+    "_id": "city015",
+    "name": "厦门",
+    "id": "101230201",
+    "province": "福建省",
+    "country": "中国"
+  }
+]

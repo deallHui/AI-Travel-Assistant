@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="qa-title">{{post.title}}</view>
+  <view class="qa-content">{{post.content}}</view>
+  <view class="qa-meta">{{post.createTime}}</view>
+  <view class="post-actions">
+    <button
+      size="mini"
+      bindtap="likePost"
+      class="like-btn {{post.isLiked ? 'liked' : ''}}"
+    >
+      {{post.isLiked ? '❤️' : '🤍'}} {{post.likesCount || 0}}
+    </button>
+  </view>
+  <view class="comments">
+    <view wx:for="{{post.comments}}" wx:key="createTime" class="comment">
+      <text>{{item.userId}}: {{item.content}}</text>
+    </view>
+    <input placeholder="写评论..." value="{{commentValue}}" bindinput="onCommentInput"/>
+    <button size="mini" bindtap="submitComment">评论</button>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+.container {
+  padding: 20rpx;
+}
+.form-item {
+  margin-bottom: 20rpx;
+}
+.form-item text {
+  display: block;
+  margin-bottom: 8rpx;
+  color: #333;
+}
+input {
+  width: 100%;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  padding: 12rpx;
+  background: #fafafa;
+}
+button {
+  width: 100%;
+  margin-top: 20rpx;
+}
+.itinerary-list {
+  margin-top: 40rpx;
+}
+.itinerary-card {
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx #eee;
+}
+.itinerary-card button {
+  margin-top: 10rpx;
+} 

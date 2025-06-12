@@ -1,0 +1,121 @@
+[
+  {
+    "_id": "itinerary001",
+    "userId": "user123",
+    "from": "上海",
+    "destinationId": "dest001",
+    "startDate": "2024-02-15",
+    "endDate": "2024-02-18",
+    "schedule": [
+      {
+        "day": 1,
+        "date": "2024-02-15",
+        "activities": [
+          {
+            "time": "09:00",
+            "activity": "抵达北京，入住酒店",
+            "location": "北京首都国际机场"
+          },
+          {
+            "time": "14:00", 
+            "activity": "游览天安门广场",
+            "location": "天安门广场"
+          },
+          {
+            "time": "16:00",
+            "activity": "参观故宫博物院",
+            "location": "故宫"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2024-02-16", 
+        "activities": [
+          {
+            "time": "08:00",
+            "activity": "前往八达岭长城",
+            "location": "八达岭长城"
+          },
+          {
+            "time": "15:00",
+            "activity": "返回市区，游览王府井",
+            "location": "王府井大街"
+          }
+        ]
+      }
+    ],
+    "reminders": [
+      {
+        "time": "2024-02-14 20:00",
+        "message": "明天出发去北京，记得带身份证"
+      },
+      {
+        "time": "2024-02-15 07:00", 
+        "message": "今天要去长城，记得穿舒适的鞋子"
+      }
+    ],
+    "createTime": "2024-01-20",
+    "status": "planned"
+  },
+  {
+    "_id": "itinerary002",
+    "userId": "user456",
+    "from": "北京",
+    "destinationId": "dest003",
+    "startDate": "2024-03-01",
+    "endDate": "2024-03-03",
+    "schedule": [
+      {
+        "day": 1,
+        "date": "2024-03-01",
+        "activities": [
+          {
+            "time": "10:00",
+            "activity": "抵达杭州，入住西湖边酒店",
+            "location": "杭州东站"
+          },
+          {
+            "time": "15:00",
+            "activity": "西湖游船，欣赏湖光山色", 
+            "location": "西湖"
+          },
+          {
+            "time": "18:00",
+            "activity": "品尝杭帮菜",
+            "location": "楼外楼"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "2024-03-02",
+        "activities": [
+          {
+            "time": "09:00",
+            "activity": "参观灵隐寺",
+            "location": "灵隐寺"
+          },
+          {
+            "time": "14:00",
+            "activity": "漫步苏堤，体验苏堤春晓",
+            "location": "苏堤"
+          },
+          {
+            "time": "16:00",
+            "activity": "登雷峰塔，俯瞰西湖全景",
+            "location": "雷峰塔"
+          }
+        ]
+      }
+    ],
+    "reminders": [
+      {
+        "time": "2024-02-28 19:00",
+        "message": "明天去杭州，记得带相机拍美景"
+      }
+    ],
+    "createTime": "2024-02-15",
+    "status": "planned"
+  }
+]

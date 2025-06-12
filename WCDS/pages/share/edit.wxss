@@ -1,0 +1,18 @@
+.container {
+  padding: 20rpx;
+}
+.title-input {
+  width: 100%;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  padding: 12rpx;
+  margin-bottom: 20rpx;
+}
+.content-input {
+  width: 100%;
+  min-height: 200rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  padding: 12rpx;
+  margin-bottom: 20rpx;
+} 

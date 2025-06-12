@@ -1,0 +1,18 @@
+{
+  "name": "wcds",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.27.1",
+    "axios": "^1.9.0",
+    "express": "^5.1.0",
+    "request-promise": "^4.2.6"
+  },
+  "description": ""
+}

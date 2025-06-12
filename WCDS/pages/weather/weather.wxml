@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="form" style="margin: 32rpx 0; padding: 24rpx; background: #f8f8f8; border-radius: 16rpx;">
+    <view style="margin-bottom: 16rpx; font-weight: bold; font-size: 32rpx;">城市与道路查询</view>
+    <textarea placeholder="请输入城市名" value="{{city}}" bindinput="onCityInput" style="margin-bottom: 16rpx; border: 1px solid #e0e0e0; border-radius: 8rpx; padding: 12rpx; background: #fff; min-height: 60rpx; width: 100%; resize: none;"/>
+    <textarea placeholder="请输入道路名" value="{{road}}" bindinput="onRoadInput" style="margin-bottom: 16rpx; border: 1px solid #e0e0e0; border-radius: 8rpx; padding: 12rpx; background: #fff; min-height: 60rpx; width: 100%; resize: none;"/>
+    <button type="primary" bindtap="onSearch" style="width: 100%; margin-top: 8rpx;">查询</button>
+  </view>
+  <view class="section" style="margin-bottom: 32rpx;">
+    <view class="section-title" style="font-size: 28rpx; font-weight: bold; border-left: 6rpx solid #1890ff; padding-left: 12rpx; margin-bottom: 12rpx;">实时天气</view>
+    <view wx:if="{{weather}}" style="padding: 16rpx 0 0 0;">
+      <view style="margin-bottom: 8rpx;">温度：<text style="font-weight:bold; color:#fa541c;">{{weather.temp}}℃</text></view>
+      <view style="margin-bottom: 8rpx;">天气：<text>{{weather.text}}</text></view>
+      <view style="margin-bottom: 8rpx;">风力：<text>{{weather.wind}}级</text></view>
+      <view>降水：<text>{{weather.precip}}mm</text></view>
+    </view>
+    <view wx:else style="color: #aaa; padding: 16rpx 0 0 0;">
+      请输入城市并查询
+    </view>
+  </view>
+  <view class="section" style="margin-bottom: 32rpx;">
+    <view class="section-title" style="font-size: 28rpx; font-weight: bold; border-left: 6rpx solid #52c41a; padding-left: 12rpx; margin-bottom: 12rpx;">交通信息</view>
+    <view wx:if="{{traffic}}" style="padding: 16rpx 0 0 0;">
+      <text>{{traffic.summary}}</text>
+      <view style="margin-top: 16rpx; padding: 12rpx; background: #f0f9ff; border-radius: 8rpx; border-left: 4rpx solid #1890ff;">
+        <text style="font-size: 24rpx; color: #1890ff;">💡 温馨提示：推荐打开高德地图查看，更安心</text>
+      </view>
+    </view>
+    <view wx:else style="color: #aaa; padding: 16rpx 0 0 0;">
+      请输入城市和道路名并查询
+    </view>
+  </view>
+</view>

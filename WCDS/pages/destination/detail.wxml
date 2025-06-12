@@ -1,0 +1,19 @@
+<view class="container">
+  <image src="{{destination.imageUrl}}" class="cover"/>
+  <view class="title">{{destination.name}}</view>
+  <view class="desc">{{destination.description}}</view>
+  <view class="section">
+    <view class="section-title">景点推荐</view>
+    <view wx:for="{{destination.attractions}}" wx:key="name" class="attraction">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <view class="section">
+    <view class="section-title">实时天气</view>
+    <text>{{destination.weather.summary}}</text>
+  </view>
+  <view class="section">
+    <view class="section-title">交通信息</view>
+    <text>{{destination.traffic.summary}}</text>
+  </view>
+</view> 
