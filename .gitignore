@@ -54,3 +54,7 @@ build/
 
 rag_ai/venv/
 .ipynb_checkpoints/
+
+rag_ai/venv/
+venv/
+.venv/
