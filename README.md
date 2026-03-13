@@ -1,37 +1,83 @@
-# course_design
+# AI Travel Assistant
 
-#### 介绍
-assist my bros to finish their course design
+一个面向旅游场景的智能问答与行程规划系统，融合 RAG 检索、模型推理与多端展示能力，提供景点推荐、行程规划、交通与预算建议等服务。
 
-#### 软件架构
-软件架构说明
+## 亮点功能
 
+- 智能旅游问答与攻略检索
+- 行程规划与路线建议
+- 目的地与景点推荐
+- 住宿、美食、交通与预算指导
+- 前后端分离部署，支持 Web 与小程序
 
-#### 安装教程
+## 技术栈
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- 后端：FastAPI + LangChain + ChromaDB
+- 前端：React + Vite + Ant Design
+- 小程序端：微信小程序（WCDS）
+- 模型能力：支持 DeepSeek 等模型接入
 
-#### 使用说明
+## 项目结构
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+AICD2/
+├── rag_ai/                 # RAG 智能问答系统
+│   ├── backend/            # 后端服务
+│   ├── frontend/           # Web 前端
+│   ├── vectorstores/       # 向量数据库
+│   └── requirements.txt    # Python 依赖
+├── WCDS/                   # 微信小程序端
+├── src/                    # 其他服务代码（Java）
+├── README.md
+└── README.en.md
+```
 
-#### 参与贡献
+## 快速开始（RAG 模块）
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+### 1. 环境准备
 
+- Python 3.8+
+- Node.js 16+
 
-#### 特技
+### 2. 配置环境变量
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+复制示例并填写密钥：
+
+```bash
+copy rag_ai\backend\.env.example rag_ai\backend\.env
+```
+
+编辑 `rag_ai/backend/.env`：
+
+```env
+DEEPSEEK_API_KEY=your-api-key-here
+```
+
+### 3. 安装依赖
+
+```bash
+pip install -r rag_ai/requirements.txt
+cd rag_ai/frontend
+npm install
+```
+
+### 4. 启动服务
+
+```bash
+python rag_ai/start_backend.py
+rag_ai\start_frontend.bat
+```
+
+访问地址：
+
+- Web 前端：http://localhost:3000
+- 后端 API：http://localhost:8000
+- API 文档：http://localhost:8000/docs
+
+## 小程序端（WCDS）
+
+使用微信开发者工具打开 `WCDS/` 目录即可运行。云函数配置与部署说明可参考 `WCDS/` 目录内的相关文档。
+
+## 贡献
+
+欢迎提交 Issue 或 Pull Request。

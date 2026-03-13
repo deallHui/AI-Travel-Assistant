@@ -1,36 +1,83 @@
-# course_design
+# AI Travel Assistant
 
-#### Description
-assist my bros to finish their course design
+An intelligent travel Q&A and itinerary planning system powered by RAG retrieval and LLM reasoning. It offers destination recommendations, itinerary planning, traffic guidance, and budget advice with multi‑client support.
 
-#### Software Architecture
-Software architecture description
+## Highlights
 
-#### Installation
+- Intelligent travel Q&A and guide search
+- Itinerary planning and route suggestions
+- Destination and attraction recommendations
+- Accommodation, food, traffic, and budget guidance
+- Frontend/backend separation with Web and mini‑program clients
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## Tech Stack
 
-#### Instructions
+- Backend: FastAPI + LangChain + ChromaDB
+- Frontend: React + Vite + Ant Design
+- Mini Program: WeChat Mini Program (WCDS)
+- Model: DeepSeek and other LLM integrations
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## Project Structure
 
-#### Contribution
+```
+AICD2/
+├── rag_ai/                 # RAG assistant module
+│   ├── backend/            # Backend service
+│   ├── frontend/           # Web frontend
+│   ├── vectorstores/       # Vector database
+│   └── requirements.txt    # Python dependencies
+├── WCDS/                   # WeChat mini program client
+├── src/                    # Other service code (Java)
+├── README.md
+└── README.en.md
+```
 
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+## Quick Start (RAG Module)
 
+### 1. Requirements
 
-#### Gitee Feature
+- Python 3.8+
+- Node.js 16+
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### 2. Configure Environment Variables
+
+Copy the sample file and fill in your key:
+
+```bash
+copy rag_ai\backend\.env.example rag_ai\backend\.env
+```
+
+Edit `rag_ai/backend/.env`:
+
+```env
+DEEPSEEK_API_KEY=your-api-key-here
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r rag_ai/requirements.txt
+cd rag_ai/frontend
+npm install
+```
+
+### 4. Start Services
+
+```bash
+python rag_ai/start_backend.py
+rag_ai\start_frontend.bat
+```
+
+Access URLs:
+
+- Web UI: http://localhost:3000
+- Backend API: http://localhost:8000
+- API Docs: http://localhost:8000/docs
+
+## Mini Program (WCDS)
+
+Open `WCDS/` with WeChat DevTools to run. Deployment notes can be found in the `WCDS/` docs.
+
+## Contributing
+
+Issues and Pull Requests are welcome.
